@@ -2,8 +2,11 @@
   "name": "@mdrayer/quickstart-github-npm-package",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.cjs.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
   "scripts": {
+    "build": "npx tsup --dts",
     "test": "exit 0"
   },
   "repository": {
@@ -18,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/mdrayer/quickstart-github-npm-package/issues"
   },
-  "homepage": "https://github.com/mdrayer/quickstart-github-npm-package#readme"
+  "homepage": "https://github.com/mdrayer/quickstart-github-npm-package#readme",
+  "devDependencies": {
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
 }
