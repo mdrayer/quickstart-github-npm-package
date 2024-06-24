@@ -2,12 +2,18 @@
   "name": "@mdrayer/quickstart-github-npm-package",
   "version": "0.0.3",
   "description": "",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
   "type": "module",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "npx tsup --dts",
+    "dev": "tsc && vite build --watch",
+    "start": "vite --host --open",
+    "build": "tsc && vite build",
+    "build:types": "dts-bundle-generator --config ./dts-bundle-generator.config.ts",
     "test": "exit 0"
   },
   "repository": {
@@ -24,10 +30,17 @@
   },
   "homepage": "https://github.com/mdrayer/quickstart-github-npm-package#readme",
   "devDependencies": {
+    "@types/node": "^20.14.8",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "dts-bundle-generator": "^9.5.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "ts-node": "^10.9.2",
     "tsup": "^8.1.0",
-    "typescript": "^5.5.2"
-  },
-  "dependencies": {
-    "dotenv": "^16.4.5"
+    "typescript": "^5.5.2",
+    "vite": "^5.3.1",
+    "vite-plugin-dts": "^3.9.1"
   }
 }
